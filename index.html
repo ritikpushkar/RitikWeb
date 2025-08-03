@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Redirecting...</title>
-  <meta http-equiv="refresh" content="1;url=https://ritikpushkar.netlify.app/">
+  <title>Ensuring Security & Redirecting...</title>
+  <meta http-equiv="refresh" content="5;url=https://ritikpushkar.netlify.app/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Security Meta Headers -->
@@ -22,7 +22,6 @@
       height: 100%;
       background-color: #000;
       color: white;
-      /* overflow: hidden; ← removed to show footer on mobile */
     }
 
     body::before {
@@ -52,6 +51,7 @@
       position: relative;
       text-align: center;
       padding: 0 20px;
+      padding-bottom: 60px;
     }
 
     .redirect-box {
@@ -131,10 +131,9 @@
       100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
     }
 
-    /* 🌟 Footer Fix for Mobile */
     .footer {
       position: fixed;
-      bottom: 10px;
+      bottom: 20px;
       left: 0;
       width: 100%;
       text-align: center;
@@ -175,20 +174,18 @@
 
   <div class="container">
     <div class="redirect-box">
-      <h1>Redirecting...</h1>
-      <p><strong>We are checking that the connection is secure.</strong></p>
+      <h1>🔍 Checking.</h1>
+      <p><strong>We are Ensuring the connection is secure.</strong></p>
       <p>You will be redirected to <strong>ritikpushkar.app</strong> shortly.</p>
       <div class="loader"></div>
     </div>
   </div>
 
-  <!-- 🌟 Footer -->
   <div class="footer">
-    <p>Designed with ❤️ by <span>Ritik Pushkar</span></p>
+    <p>Designed & Secured by <span>Ritik Pushkar</span></p>
   </div>
 
   <script>
-    // ❌ Disable DevTools hotkeys
     document.addEventListener("keydown", function (e) {
       if (
         e.key === "F12" ||
@@ -200,7 +197,6 @@
       }
     });
 
-    // 🛑 DevTools detection via resize
     const threshold = 160;
     setInterval(() => {
       if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
@@ -208,14 +204,12 @@
       }
     }, 1000);
 
-    // ⚠️ Console warning
     setTimeout(() => {
       const style = "font-size: 22px; color: red; font-weight: bold;";
       console.log("%c⚠️ WARNING!", style);
       console.log("%cThis browser feature is intended for developers. If someone told you to copy-paste something here, it could be a scam.", "color: yellow; font-size: 16px;");
     }, 300);
 
-    // 🌐 GeoIP block (warn for restricted countries)
     fetch("https://ipinfo.io/json?token=75da8cd16383b5")
       .then(res => res.json())
       .then(data => {
@@ -225,17 +219,32 @@
         }
       });
 
-    // 🛡️ DNS spoofing check
     fetch("https://dns.google/resolve?name=ritikpushkar.netlify.app&type=A")
       .then(res => res.json())
       .then(data => {
-        const expectedIP = "104.21.30.120"; // Replace with your Netlify IP if different
+        const expectedIP = "104.21.30.120";
         const actualIP = data.Answer?.[0]?.data;
         if (actualIP !== expectedIP) {
           alert("⚠️ DNS spoofing suspected. Exiting.");
           window.location.href = "about:blank";
         }
       });
+
+    // Dot + Emoji Animation
+    const titleElement = document.querySelector(".redirect-box h1");
+    let baseText = "Checking";
+    let baseEmoji = "🔎";
+    let dotCount = 0;
+
+    const dotInterval = setInterval(() => {
+      dotCount = (dotCount + 1) % 4;
+      titleElement.textContent = `${baseEmoji} ${baseText}${".".repeat(dotCount)}`;
+    }, 500);
+
+    setTimeout(() => {
+      baseText = "Redirecting";
+      baseEmoji = "⚡";
+    }, 2000);
   </script>
 </body>
 </html>

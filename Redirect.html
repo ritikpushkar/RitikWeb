@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <meta http-equiv="refresh" content="1;url=https://ritikpushkar.netlify.app/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQqtXvElwF6QOjKQQOfdpeUV4EwHxApw3KpmPvwaIui9iRTc7cbpqCX-zP7fxdv9-Qh8s534cnn7PSNLXqoIM0GFcP_nC7ddHDaoMbjcxA0x-yX9hBpWkjh0hCgNtDaqfh9itc_PEhBH-ko3PueexAcyYi5-q8It867vVdyQHBBfwRTFC8mgIcPmr7d00i/s1600/14034924_3240_2160_25fps.gif') no-repeat center center / cover;
+      filter: blur(3px) brightness(0.6);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: -1;
+    }
+
+    .redirect-box {
+      background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      backdrop-filter: blur(6px);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 15px rgba(0, 162, 255, 0.25);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .redirect-box h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: hsl(207, 100%, 50%);
+      text-shadow: 0 0 6px #00c3ff7a;
+    }
+
+    .redirect-box p {
+      font-size: 16px;
+      color: #d5f9ff;
+    }
+
+    .loader {
+      margin: 30px auto 0;
+      border: 6px solid rgba(255, 255, 255, 0.1);
+      border-top: 6px solid #0084ff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 600px) {
+      .redirect-box {
+        padding: 25px 20px;
+        margin: 0 10px;
+      }
+
+      .redirect-box h1 {
+        font-size: 22px;
+      }
+
+      .redirect-box p {
+        font-size: 14px;
+      }
+
+      .loader {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="redirect-box">
+    <h1>Redirecting...</h1>
+    <p>You will be redirected to <strong>ritikpushkar.netlify.app</strong> in a moment.</p>
+    <div class="loader"></div>
+  </div>
+</body>
+</html>

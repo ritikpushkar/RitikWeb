@@ -130,6 +130,30 @@
       0% { transform: translateY(0) scale(1); opacity: 1; }
       100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
     }
+
+    /* 🌟 Floating Footer */
+    .footer {
+      position: fixed;
+      bottom: 15px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    .footer p {
+      color: #ccc;
+      font-size: 14px;
+      text-shadow: 0 0 6px #000;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .footer span {
+      color: #00bfff;
+      font-weight: 600;
+    }
   </style>
 </head>
 
@@ -149,6 +173,11 @@
       <p>You will be redirected to <strong>ritikpushkar.app</strong> shortly.</p>
       <div class="loader"></div>
     </div>
+  </div>
+
+  <!-- 🌟 Footer -->
+  <div class="footer">
+    <p>Designed & Secured by <span>Ritik Pushkar</span></p>
   </div>
 
   <script>

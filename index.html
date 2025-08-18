@@ -308,11 +308,7 @@
           e.altKey ? 'Alt+' : '',
           e.key
         ].join('');
-        
-        if (blockedKeys.includes(keyCombination)) {
-          e.preventDefault();
-          window.location.href = 'about:blank';
-        }
+      
       });
       
         
@@ -341,19 +337,7 @@
         return true;
       }
       
-      // Frame busting
-      if (window.top !== window.self) {
-        window.top.location = window.self.location;
-      }
-      
-      // Check screen resolution for debugging
-      const threshold = 160;
-      setInterval(() => {
-        if (window.outerWidth - window.innerWidth > threshold || 
-            window.outerHeight - window.innerHeight > threshold) {
-          window.location.href = "about:blank";
-        }
-      }, 1000);
+    
       
       // Initialize
       if (checkIndianNetwork()) {

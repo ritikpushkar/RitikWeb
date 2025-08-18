@@ -315,14 +315,7 @@
         }
       });
       
-        // Detect devtools
-      const devtools = /./;
-      devtools.toString = function() {
-        window.location.href = 'about:blank';
-        return '';
-      };
-      console.log('%c', devtools);
-      
+        
       // Check for Indian networks (simplified example)
       function checkIndianNetwork() {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
